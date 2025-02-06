@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Sentiment Analysis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .info-section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        .info-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        .animation-section {
+            position: relative;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .animated-circle {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            position: absolute;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+        }
+
+        #predictButton {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: white;
+            background: #ff6f61;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Finance Sentiment Analysis</h1>
+            <p>Understanding Market Emotions for Better Investment Decisions</p>
+        </header>
+        <main>
+            <section class="info-section">
+                <h2>About Finance Sentiment Analysis</h2>
+                <p>Finance Sentiment Analysis is a powerful tool that helps investors understand the emotional tone behind financial news, social media, and other data sources. By analyzing sentiment, we can predict market trends and make informed investment decisions.</p>
+                <p>Our platform uses advanced algorithms to analyze sentiment data from various sources, providing you with actionable insights.</p>
+            </section>
+            <section class="animation-section">
+                <div class="animated-circle"></div>
+                <button id="predictButton">Predict Sentiment</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Finance Sentiment Analysis. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('predictButton').addEventListener('click', function() {
+            // Redirect to the /predict route
+            window.location.href = '/predict';
+        });
+    </script>
+</body>
+</html>
