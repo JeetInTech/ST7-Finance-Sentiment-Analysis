@@ -1,0 +1,9 @@
+1)load dataset in vscode
+2)clean data using regex
+3)word tokenization
+4)stopword removation
+5)stemming
+6)count vectorization or tf-idf(pickle)
+7)train test split
+ml model--->pickel
+8)predict
