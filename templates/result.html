@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Result</title>
+    <style>
+        body {
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .result-box {
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Sentiment Colors */
+        .positive { background: linear-gradient(45deg, #00ff00, #007700); color: #fff; box-shadow: 0 0 20px #00ff00; }
+        .neutral { background: linear-gradient(45deg, #888, #444); color: #fff; box-shadow: 0 0 20px #bbb; }
+        .negative { background: linear-gradient(45deg, #ff0000, #770000); color: #fff; box-shadow: 0 0 20px #ff0000; }
+
+    </style>
+</head>
+<body>
+
+    <div id="sentiment" class="result-box">Loading...</div>
+
+    <script>
+        // Simulate receiving JSON response
+        let response = {"RESULT": "1"}; // Change this to "-1" or "0" to see different results
+
+        let resultBox = document.getElementById("sentiment");
+
+        if (response.RESULT == "1") {
+            resultBox.textContent = "Positive 😊";
+            resultBox.classList.add("positive");
+        } else if (response.RESULT == "0") {
+            resultBox.textContent = "Neutral 😐";
+            resultBox.classList.add("neutral");
+        } else if (response.RESULT == "-1") {
+            resultBox.textContent = "Negative 😞";
+            resultBox.classList.add("negative");
+        }
+    </script>
+
+</body>
+</html>
