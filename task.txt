@@ -6,4 +6,3 @@
 6)count vectorization or tf-idf(pickle)
 7)train test split
 ml model--->pickel
-8)predict

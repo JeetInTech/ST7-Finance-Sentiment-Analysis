@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .result-box {
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .positive { background-color: #4CAF50; }
+        .neutral { background-color: #888888; }
+        .negative { background-color: #D32F2F; }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis Result</h1>
+    <div id="result" class="result-box">Waiting for result...</div>
+    
+    <script>
+        function displayResult(sentiment) {
+            let resultDiv = document.getElementById("result");
+            resultDiv.classList.remove("positive", "neutral", "negative", "show");
+            
+            if (sentiment == 1) {
+                resultDiv.textContent = "Positive";
+                resultDiv.classList.add("positive");
+            } else if (sentiment == 0) {
+                resultDiv.textContent = "Neutral";
+                resultDiv.classList.add("neutral");
+            } else {
+                resultDiv.textContent = "Negative";
+                resultDiv.classList.add("negative");
+            }
+            
+            setTimeout(() => resultDiv.classList.add("show"), 100);
+        }
+        
+        // Example API response simulation
+        setTimeout(() => {
+            let exampleResponse = { RESULT: "1" };  // Change to "0" or "-1" to test
+            displayResult(parseInt(exampleResponse.RESULT));
+        }, 1000);
+        setTimeout(() => {
+            let exampleResponse = { RESULT: "0" };  // Change to "0" or "-1" to test
+            displayResult(parseInt(exampleResponse.RESULT));
+        }, 1000);
+        setTimeout(() => {
+            let exampleResponse = { RESULT: "-1" };  // Change to "0" or "-1" to test
+            displayResult(parseInt(exampleResponse.RESULT));
+        }, 1000);
+    </script>
+</body>
+</html>
